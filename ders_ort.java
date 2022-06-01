@@ -1,4 +1,8 @@
-import java.text.DecimalFormat;
+/*
+String değişken (kriter) ? "Kriter sağlanırsa çıkacak yazı" : "Kriter sağlanmazsa çıkacak yazı" ;
+*/
+
+
 import java.util.Scanner;
 
 public class ders_ort
