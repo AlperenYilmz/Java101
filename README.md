@@ -1,1 +1,1 @@
-# Java101
+A repo for some Java algorithms & exercises based on Patika.dev courses.
