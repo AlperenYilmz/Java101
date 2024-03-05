@@ -1,1 +1,2 @@
-# A repo for some Java algorithms & exercises based on Patika.dev courses. #
+- A repo for some Java algorithms & exercises based on Patika.dev courses.
+- Built with Gradle
