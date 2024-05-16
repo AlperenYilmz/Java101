@@ -1,1 +1,2 @@
-# Java101
+# Java 101
+- Some algorithms and exercises for Beginner Java
