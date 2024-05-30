@@ -10,7 +10,7 @@ public class biggestSmallest
 
         while (true)
         {
-            System.out.printf("Enter %d. number:", i);
+            System.out.printf("(Press enter to cease input) Enter %d. number:", i);
             String girdi = tara.nextLine();
 
             if(girdi.isEmpty())
@@ -36,16 +36,19 @@ public class biggestSmallest
 
         }
 
+        if(cnt==0)
+            System.out.print("No entries were made...");
+        else if (cnt==1)
+            System.out.printf("Only one entry made, and that is: %.4f", tempNum);
 
+        else
+        {
+            System.out.printf("Biggest number: %f", enb);
+            System.out.printf("\nSmallest number: %f", enk);
+        }
 
-
-
-
-
-
-
-
-
+    }
+}
 
         /*
         while (true) // control loop without creating an array
@@ -71,16 +74,3 @@ public class biggestSmallest
             }
         }
         */
-        if(cnt==0)
-            System.out.print("No entries were made...");
-        else if (cnt==1)
-            System.out.printf("Only one entry made, and that is: %.4f", tempNum);
-
-        else
-        {
-            System.out.printf("Biggest number: %f", enb);
-            System.out.printf("\nSmallest number: %f", enk);
-        }
-
-    }
-}
