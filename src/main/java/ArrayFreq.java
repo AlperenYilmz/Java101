@@ -1,56 +1,39 @@
 import java.util.Scanner;
-import java.util.Arrays;
-
+import java.util.ArrayList;
+import java.util.Collections;
 public class ArrayFreq
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner tara = new Scanner(System.in);
-        System.out.println("This program finds the number of occurences in the entered array.");
-        int size;
-        while(true)
-        {
-            System.out.print("Enter array size:");
-            size = tara.nextInt();
-            if (size<1)
-                System.out.println("Invalid entry! Try again.\n");
-            else
-                break;
-        }
-
-        int[] arr = new int[size];      // creating an array in size of "size"
-
-        for(int i=0;i<size;i++)     // loop for defining array elements
-        {
-            System.out.printf("Enter the %d. element of the array:", i+1);
-            arr[i]= tara.nextInt();
-        }
-
-        System.out.println("\nYour array: " + Arrays.toString(arr) + "\n");
-
-        int [] test = new int[arr.length];
-        int trp = -1;
-
-        for(int i=0; i<arr.length; i++)
-        {
-            int cnt = 1;
-            for(int j=i+1; j<arr.length; j++)
-            {
-                if(arr[i] == arr[j])
-                {
-                    cnt++;
-                    test[j] = trp;
+        ArrayList<Float> array = new ArrayList<>();
+        System.out.println("This program finds the number of occurence in the entered array.");
+        while (true) {
+            try {
+                System.out.println("Enter a number:");
+                String inp = tara.nextLine();
+                if (inp.isEmpty()) {
+                    System.out.println("Exiting...");
+                    break;
                 }
+                array.add(Float.parseFloat(inp));
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input, try again.");
             }
-            if(test[i]!=trp)
-                test[i]=cnt;
         }
 
-        System.out.println("Number   /   # of occurence(s)");
-        for(int i=0;i<test.length;i++)
-        {
-            if(test[i]!=trp)
-                System.out.println(+arr[i]+"      /   "+test[i]);
+        if (array.isEmpty()) {
+            System.out.println("No entries, program will be terminated.");
+            System.exit(0);
         }
+
+        System.out.println("Numbers entered:");
+        for (Float element : array)
+            System.out.println(element);
+
+        Collections.sort(array);    // original array is now changed
+
+        System.out.println("Sorted array:");
+        for (Float element : array)
+            System.out.println(element);
     }
 }
