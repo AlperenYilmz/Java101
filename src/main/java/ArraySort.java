@@ -1,47 +1,39 @@
-import java.util.Arrays;
 import java.util.Scanner;
-
+import java.util.ArrayList;
+import java.util.Collections;
 public class ArraySort
 {
-    public static void main(String[] args)
-    {
-        int size, temp=0;
+    public static void main(String[] args) {
         Scanner tara = new Scanner(System.in);
-        System.out.println("This algorithm sorts the entered array in ascending order.");
-
-
-        while (true)    // Control loop for meaningful definiton of array size
-        {
-            System.out.print("Enter the size of the array:");
-            size = tara.nextInt();
-            if(size<1)
-                System.out.print("Invalid entry! Try again.");
-            else
-                break;
-        }
-
-        int[] arr = new int[size];
-        for(int i=0;i<size;i++)
-        {
-            System.out.printf("Enter the %d. element of the array:", i+1);
-            arr[i]= tara.nextInt();
-        }
-
-        System.out.println("Original unsorted array: " + Arrays.toString(arr));
-
-        for(int i=0;i<size;i++)
-        {
-            for(int j=i+1;j<size;j++)
-            {
-                if(arr[i] > arr[j])
-                {
-                    temp = arr[i];
-                    arr[i] = arr[j];
-                        arr[j] = temp;
-                    }
+        ArrayList<Float> array = new ArrayList<>();
+        System.out.println("This program finds the number of occurence in the entered array.");
+        while (true) {
+            try {
+                System.out.println("Enter a number:");
+                String inp = tara.nextLine();
+                if (inp.isEmpty()) {
+                    System.out.println("Exiting...");
+                    break;
+                }
+                array.add(Float.parseFloat(inp));
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input, try again.");
             }
         }
 
-        System.out.println("Sorted array: " + Arrays.toString(arr));
+        if (array.isEmpty()) {
+            System.out.println("No entries, program will be terminated.");
+            System.exit(0);
+        }
+
+        System.out.println("Numbers entered:");
+        for (Float element : array)
+            System.out.println(element);
+
+        Collections.sort(array);    // original array is now changed
+
+        System.out.println("Sorted array:");
+        for (Float element : array)
+            System.out.println(element);
     }
 }
