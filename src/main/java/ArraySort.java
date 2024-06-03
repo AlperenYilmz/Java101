@@ -6,7 +6,7 @@ public class ArraySort
     public static void main(String[] args) {
         Scanner tara = new Scanner(System.in);
         ArrayList<Float> array = new ArrayList<>();
-        System.out.println("This program finds the number of occurence in the entered array.");
+        System.out.println("This program sorts your array.");
         while (true) {
             try {
                 System.out.println("Enter a number:");
