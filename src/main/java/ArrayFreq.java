@@ -1,15 +1,16 @@
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
+
 public class ArrayFreq
 {
     public static void main(String[] args) {
         Scanner tara = new Scanner(System.in);
         ArrayList<Float> array = new ArrayList<>();
-        System.out.println("This program finds the number of occurence in the entered array.");
-        while (true) {
-            try {
-                System.out.println("Enter a number:");
+        System.out.println("This program finds the number of occurences of elements in the entered array.");
+        while (true)
+        {
+            try
+            {
+                System.out.println("(Enter blank to stop input) Enter a number:");
                 String inp = tara.nextLine();
                 if (inp.isEmpty()) {
                     System.out.println("Exiting...");
@@ -30,10 +31,25 @@ public class ArrayFreq
         for (Float element : array)
             System.out.println(element);
 
-        Collections.sort(array);    // original array is now changed
+        elementCounter(array);
+     }
+    public static void elementCounter(ArrayList<Float> testList)
+    {
+        ArrayList<Float> elmtCounted = new ArrayList<>();
 
-        System.out.println("Sorted array:");
-        for (Float element : array)
-            System.out.println(element);
+        for (Float element : testList)
+        {
+            if (!elmtCounted.contains(element))
+            {
+                int count = 0;
+                for (Float itr : testList)
+                {
+                    if (itr.equals(element))
+                        count++;
+                }
+                elmtCounted.add(element);
+                System.out.println(element + " occurs " + count + " times");
+            }
+        }
     }
 }
